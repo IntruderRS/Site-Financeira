@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DindinFácil - Empréstimos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO (Igual à Home) -->
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logodindinfacil.png" alt="Logo DindinFácil" class="logo-img">
+            <div class="logo-texto">
+                <h1>Dindin<span>Fácil</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTAINER ESTRUTURAL -->
+    <div class="container">
+
+        <!-- MENU LATERAL ESQUERDO (Com destaque na página Empréstimos) -->
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="emprestimos.html" class="active">Empréstimos</a></li>
+                    <li><a href="cliente.html">Seja Nosso Cliente</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
+        <main>
+
+            <h2 class="secao-titulo">Nossas Modalidades de Crédito</h2>
+
+            <!-- Reaproveitando o mesmo sistema de grid e caixas da Home -->
+            <div class="grid-servicos">
+
+                <!-- Caixa 1: Empréstimo Pessoal -->
+                <div class="caixa-servico">
+                    <h3>Empréstimo Pessoal</h3>
+                    <p>Dinheiro rápido na conta para usar como quiser, sem complicações. Ideal para cobrir imprevistos
+                        ou realizar projetos pessoais com parcelas fixas.</p>
+                </div>
+
+                <!-- Caixa 2: Empréstimo Consignado -->
+                <div class="caixa-servico">
+                    <h3>Empréstimo Consignado</h3>
+                    <p>Exclusivo para aposentados, pensionistas do INSS e servidores públicos. Desconto direto na folha
+                        de pagamento com as menores taxas do mercado.</p>
+                </div>
+
+            </div>
+            <!-- ÁREA DE SIMULAÇÃO REQUISITADA -->
+            <section class="secao-simulador">
+                <h2 class="secao-titulo">Simulador de Empréstimo</h2>
+
+                <!-- O formulário executa a função de cálculo automaticamente ao mudar qualquer opção -->
+                <form class="form-simulador" oninput="calcularParcelaDinâmica()">
+
+                    <!-- Campo 1: Tipo de Empréstimo -->
+                    <div class="campo-simulador">
+                        <label for="tipo-emprestimo">Tipo de Empréstimo:</label>
+                        <select id="tipo-emprestimo">
+                            <option value="0.04">Pessoal (Taxa: 4% a.m.)</option>
+                            <option value="0.02">Consignado (Taxa: 2% a.m.)</option>
+                        </select>
+                    </div>
+
+                    <!-- Campo 2: Valores Predefinidos -->
+                    <div class="campo-simulador">
+                        <label for="valor-desejado">Valor Desejado:</label>
+                        <select id="valor-desejado">
+                            <option value="2000">R$ 2.000,00</option>
+                            <option value="5000">R$ 5.000,00</option>
+                            <option value="10000">R$ 10.000,00</option>
+                            <option value="15000">R$ 15.000,00</option>
+                            <option value="20000">R$ 20.000,00</option>
+                        </select>
+                    </div>
+
+                    <!-- Campo 3: Quantidade de Meses -->
+                    <div class="campo-simulador">
+                        <label for="meses-pagamento">Meses para Pagamento:</label>
+                        <select id="meses-pagamento">
+                            <option value="12">12 meses</option>
+                            <option value="24">24 meses</option>
+                            <option value="36">36 meses</option>
+                            <option value="48">48 meses</option>
+                        </select>
+                    </div>
+                </form>
+
+                <!-- Painel de Exibição do Resultado e Botão de Ação -->
+                <div class="painel-resultado">
+                    <div class="texto-resultado">
+                        <p>Valor Estimado da Parcela:</p>
+                        <h3 id="resultado-parcela">R$ 212,15</h3>
+                    </div>
+                    <a href="cliente.html" class="btn-oferta">Seja nosso cliente</a>
+                </div>
+            </section>
+
+            <!-- SCRIPT DE CÁLCULO FINANCEIRO REAL (Cole antes do fechamento da tag </body>) -->
+            <script>
+                function calcularParcelaDinâmica() {
+                    // Captura os valores selecionados nos campos
+                    const taxa = parseFloat(document.getElementById('tipo-emprestimo').value);
+                    const valor = parseFloat(document.getElementById('valor-desejado').value);
+                    const meses = parseInt(document.getElementById('meses-pagamento').value);
+
+                    // Fórmula de juros compostos para cálculo de parcelas fixas (Tabela Price)
+                    const calculo = (valor * taxa) / (1 - Math.pow(1 + taxa, -meses));
+
+                    // Exibe o valor formatado em formato de moeda Real (R$)
+                    document.getElementById('resultado-parcela').innerText = "R$ " + calculo.toFixed(2).replace('.', ',');
+                }
+                // Inicializa o cálculo assim que a página carrega
+                window.onload = calcularParcelaDinâmica;
+            </script>
+        </main>
+    </div>
+
+    <!-- RODAPÉ (Igual à Home) -->
+    <footer>
+        <div class="rodape-bloco rodape-logo">
+            <img src="imagens/logodindinfacil.png" alt="Logo DindinFácil" class="rodape-img">
+        </div>
+
+        <div class="rodape-bloco contato-central">
+            <strong>Central de Vendas</strong>
+            <span>0800 777 8000</span>
+        </div>
+
+        <div class="rodape-bloco contato-whats">
+            <img src="imagens/whatsapp.jpg" alt="WhatsApp" class="icone-whats">
+            <div class="whats-texto">
+                <strong>WhatsApp</strong>
+                <span>4004-8000</span>
+            </div>
+        </div>
+
+        <div class="rodape-bloco rodape-redes">
+            <strong>Siga</strong>
+            <div class="icones-redes">
+                <a href="instagram/dindinfacil"><img src="imagens/instagram.jpg" alt="Instagram"></a>
+                <a href="facebook/dindinfacil"><img src="imagens/facebook.jpg" alt="Facebook"></a>
+                <a href="linkedin/dindinfacil"><img src="imagens/linkedin.jpg" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

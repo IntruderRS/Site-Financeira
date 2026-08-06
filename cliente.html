@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DindinFácil - Seja Nosso Cliente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO COM LOGO -->
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logodindinfacil.png" alt="Logo DindinFácil" class="logo-img">
+            <div class="logo-texto">
+                <h1>Dindin<span>Fácil</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTAINER ESTRUTURAL -->
+    <div class="container">
+        
+        <!-- MENU LATERAL ESQUERDO -->
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="emprestimos.html">Empréstimos</a></li>
+                    <li><a href="cliente.html" class="active">Seja Nosso Cliente</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL (FORMULÁRIO) -->
+        <main>
+            
+            <!-- PARTE SUPERIOR COM IMAGEM + TEXTO -->
+            <section class="topo-cadastro">
+                <img src="imagens/atendimento.png" alt="Atendimento DindinFácil" class="img-cadastro">
+                <div class="texto-cadastro">
+                    <h2>Abra sua conta e mude sua vida financeira</h2>
+                    <p>Preencha os dados abaixo rapidamente. Nossa equipe de analistas entrará em contato com você via telefone ou WhatsApp em menos de 15 minutos para finalizar sua proposta.</p>
+                </div>
+            </section>
+
+            <!-- FORMULÁRIO PRINCIPAL -->
+            <section class="secao-formulario">
+                <form class="form-cadastro" action="#" method="POST">
+                    
+                    <!-- Campo: Nome -->
+                    <div class="grupo-campo">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                    </div>
+
+                    <!-- Campo: E-mail -->
+                    <div class="grupo-campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                    </div>
+
+                    <!-- Campo: Telefone -->
+                    <div class="grupo-campo">
+                        <label for="telefone">Telefone / WhatsApp:</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(51) 99999-0000" required>
+                    </div>
+
+                    <!-- Campo: Tipo de Serviço Desejado -->
+                    <div class="grupo-campo">
+                        <label for="servico">Serviço Desejado:</label>
+                        <select id="servico" name="servico">
+                            <option value="emprestimo">Empréstimo Pessoal</option>
+                            <option value="consignado">Empréstimo Consignado</option>
+                            <option value="financiamento">Financiamentos</option>
+                            <option value="antecipacao">Antecipação de Recebíveis</option>
+                        </select>
+                    </div>
+
+                    <!-- Caixa de Seleção: Aposentado ou Não (Bolinhas Radio) -->
+                    <div class="grupo-radio">
+                        <p>Você é aposentado ou pensionista?</p>
+                        <div class="opcoes-radio">
+                            <input type="radio" id="aposentado-sim" name="aposentado" value="sim">
+                            <label for="aposentado-sim">Sim</label>
+                            
+                            <input type="radio" id="aposentado-nao" name="aposentado" value="nao" checked>
+                            <label for="aposentado-nao">Não</label>
+                        </div>
+                    </div>
+
+                    <!-- Botão Cadastrar -->
+                    <button type="submit" class="btn-cadastrar">Cadastrar</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="rodape-bloco rodape-logo">
+            <img src="imagens/logodindinfacil.png" alt="Logo DindinFácil" class="rodape-img">
+        </div>
+
+        <div class="rodape-bloco contato-central">
+            <strong>Central de Vendas</strong>
+            <span>0800 777 8000</span>
+        </div>
+
+        <div class="rodape-bloco contato-whats">
+            <img src="imagens/whatsapp.jpg" alt="WhatsApp" class="icone-whats">
+            <div class="whats-texto">
+                <strong>WhatsApp</strong>
+                <span>4004-8000</span>
+            </div>
+        </div>
+
+        <div class="rodape-bloco rodape-redes">
+            <strong>Siga</strong>
+            <div class="icones-redes">
+                <a href="instagram/dindinfacil"><img src="imagens/instagram.jpg" alt="Instagram"></a>
+                <a href="facebook/dindinfacil"><img src="imagens/facebook.jpg" alt="Facebook"></a>
+                <a href="linkedin/dindinfacil"><img src="imagens/linkedin.jpg" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,595 @@
+/* RESET E CONFIGURAÇÕES GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+header {
+    background-color: #ff6600;
+    /* cor do cabeçalho */
+    color: white;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 140px; /* Altura do cabeçalho */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Alinhamento do Logo e do Texto */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre a imagem do logo e o texto */
+}
+
+/* CONTROLE DA IMAGEM/LOGO */
+.logo-img {
+    height: 120px; /* Define uma altura proporcional para caber o topo */
+    width: auto; /* Mantém a largura proporcional automática para não distorcer */
+    object-fit: contain;
+}
+
+/* TEXTO DO LOGO */
+.logo-texto h1 {
+    font-size: 52px;
+    color: #0f2c59; /* Cor azul escuro para o "Dindin" destacar no fundo laranja e da palavra Fácil */
+    font-weight: 700;
+    font-style: italic;
+}
+
+.logo-texto h1 span {
+    color: white; /* Cor Branco para o "Fácil" destacar no fundo laranja e da palavra Dindin*/
+    font-weight: 600;
+}
+
+/* CONFIGURAÇÃO DO NOVO RODAPÉ */
+footer {
+    background-color: #ff6600;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: center; /* Junta todos os blocos no centro */
+    gap: 160px; /* Define a distância exata entre cada bloco */
+
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* MENU LATERAL */
+aside {
+    width: 250px;
+    background-color: #0f2c59;   /* Azul Escuro Profundo: Contraste perfeito com o Laranja */
+    position: fixed;
+    top: 140px; /* Começa exatamente abaixo do seu cabeçalho de 140px */
+    bottom: 80px; /* Termina exatamente acima do seu rodapé de 80px */
+    left: 0;
+    padding: 40px 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Lista do Menu Lateral */
+
+aside nav ul {
+    list-style: none; /* Remove as bolinhas da lista comum */
+}
+
+aside nav ul li {
+    margin-bottom: 20px; /* Espaçamento vertical entre os botões do menu */
+}
+
+/* Links do Menu */
+aside nav ul li a {
+    color: #f4f6f9; /* Cor do texto quase branca para leitura confortável */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border-left: 4px solid transparent; /* Linha invisível preparada para o efeito de destaque */
+    transition: all 0.3s ease; /* Deixa a transição de cor suave */
+}
+
+/* Efeito ao passar o mouse (Hover) e página ativa (Active) */
+aside nav ul li a:hover,
+aside nav ul li a.active {
+    background-color: rgba(255, 102, 0, 0.15); /* Fundo laranja bem suave/transparente */
+    color: #ff6600; /* Texto ganha o laranja do cabeçalho */
+    border-left: 4px solid #ff6600; /* Ganha uma barrinha laranja estilizada na esquerda */
+    padding-left: 20px; /* Desloca o texto levemente para a direita (efeito dinâmico) */
+}
+
+/* CONTEÚDO PRINCIPAL (ÁREA DA DIREITA) */
+main {
+    margin-left: 250px;
+    padding: 20px 40px 40px 40px;
+    width: calc(100% - 250px);
+    margin-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* COMPONENTES DE CONTEÚDO (CAIXAS) */
+/* AJUSTE DO CONTAINER PRINCIPAL */
+.container {
+    display: flex;
+    margin-top: 35px;/* Aumenta folga abaixo do cabeçalho */
+    flex: 1;
+}
+
+.secao-titulo {
+    font-size: 24px;
+    color: #0f2c59; /* Nosso azul escuro */
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    border-bottom: 5px solid #ff6600; /* Linha laranja abaixo do título */
+    padding-bottom: 8px;
+}
+
+/* O GRUPO DAS CAIXAS (O alinhamento) */
+.grid-servicos {
+    display: flex; /* Diz ao navegador para colocar os filhos lado a lado */
+    gap: 20px; /* Cria um espaçamento exato de 20px entre cada caixa */
+    flex-wrap: wrap;/* Se a tela for pequena (celular), joga as caixas para baixo */
+}
+
+/* A CAIXA INDIVIDUAL */
+.caixa-servico {
+    background-color: white;
+    border-radius: 8px; /* Arredonda os cantos da caixa */
+    padding: 20px; /* Espaço interno para o texto não encostar na borda */
+    flex: 1; /* Faz as 3 caixas terem exatamente o mesmo tamanho */
+    min-width: 250px; /* Define o tamanho mínimo que ela pode encolher */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra bem suave no fundo */
+}
+
+/* A IMAGEM DENTRO DA CAIXA */
+.caixa-servico img {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível da caixa */
+    height: 160px; /* Define uma altura fixa para todas as fotos ficarem iguais */
+    object-fit: cover; /* Corta a imagem proporcionalmente para não ficar esticada */
+    border-radius: 6px; /* Arredonda os cantos da imagem */
+    margin-bottom: 15px; /* Empurra o título debaixo para longe */
+}
+
+/* O TITULO DE CADA SERVIÇO */
+.caixa-servico h3 {
+    color: #0f2c59;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* O TEXTO DESCRITIVO */
+.caixa-servico p {
+    color: #666; /* Um cinza escuro confortável para leitura */
+    font-size: 14px;
+    line-height: 1.5; /* Melhora o espaçamento entre as linhas do texto */
+    margin-bottom: 15px;
+}
+
+/* O LINK DE DETALHES */
+.link-detalhes {
+    color: #ff6600; /* Cor laranja do nosso tema */
+    text-decoration: none; /* Remove o sublinhado padrão de links */
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Efeito quando passa o mouse no link */
+.link-detalhes:hover {
+    text-decoration: underline; /* Aparece o sublinhado no movimento */
+}
+
+/* Regra geral para cada bloco dentro do rodapé */
+.rodape-bloco {
+    display: flex;
+    flex-direction: column; /* Faz o texto debaixo ficar alinhado */
+    justify-content: center;
+}
+
+/* Bloco do Logo */
+.rodape-img {
+    height: 50px; /* Tamanho proporcional para o rodapé */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Bloco da Central de Vendas */
+.contato-central strong {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.contato-central span {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center; /* Centraliza o número abaixo do texto */
+    margin-top: 2px;
+}
+
+/* Bloco do WhatsApp (Alinha ícone e textos lado a lado) */
+.contato-whats {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.icone-whats {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    border-radius: 5px; /* Caso a imagem não seja redonda */
+}
+
+.whats-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.whats-texto strong {
+    font-size: 14px;
+}
+
+.whats-texto span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Bloco de Redes Sociais */
+.rodape-redes {
+    align-items: center; /* Centraliza a palavra "Siga" acima dos ícones */
+    gap: 5px;
+}
+
+.rodape-redes strong {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.icones-redes {
+    display: flex;
+    gap: 12px; /* Espaçamento entre os ícones das redes */
+}
+
+.icones-redes img {
+    width: 24px; /* Tamanho padrão para ícones de redes sociais */
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+/* Efeito visual ao passar o mouse nos ícones */
+.icones-redes a:hover img {
+    transform: scale(1.2);
+}
+
+/* CONTAINER PRINCIPAL DA OFERTA */
+.banner-oferta {
+    background: linear-gradient(135deg, #0f2c59 60%, #ff6600); /* Degradê do Azul para o Laranja */
+    color: white;
+    padding: 25px 40px;
+    border-radius: 12px;       /* Cantos arredondados */
+    margin-bottom: 55px;       /* Empurra a seção de caixas debaixo para baixo */
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.15); /* Sombra neon laranja bem sutil */
+    position: relative;
+    overflow: hidden;
+    width: 100%; 
+    display: block; 
+    border: none;
+}
+
+/* ETIQUETA PEQUENA DE ATENÇÃO */
+.oferta-etiqueta {
+    background-color: #ff6600; /* Fundo laranja vivo */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* TÍTULO PRINCIPAL DO CHAMARISCO */
+.banner-oferta {
+    background: linear-gradient(135deg, #0f2c59 60%, #ff6600); /* Degradê do Azul para o Laranja */
+    color: white;
+    padding: 40px;
+    margin-top: 120px;
+    border-radius: 12px;       /* Cantos bem arredondados */
+    margin-bottom: 0px;       /* Afasta as caixas debaixo */
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.15); 
+    display: block;            /* Garante que o navegador trate a section como um bloco visível */
+}
+
+/* ETIQUETA DE ATENÇÃO */
+.oferta-etiqueta {
+    background-color: #ff6600; /* Laranja vivo */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 20px;       /* Formato de balão */
+    display: inline-block;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* TÍTULO PRINCIPAL */
+.banner-oferta h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+/* TEXTO DESCRITIVO */
+.banner-oferta p {
+    font-size: 16px;
+    color: #eadbc8;           /* Tom de areia claro */
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* O BOTÃO CHAMA-ATENÇÃO */
+.btn-oferta {
+    background-color: white;
+    color: #0f2c59;            /* Texto azul escuro */
+    text-decoration: none;
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease; 
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+.btn-oferta:hover {
+    background-color: #ff6600; 
+    color: white;              
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
+}
+
+/* CONTAINER DO SIMULADOR */
+.secao-simulador {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* ALINHAMENTO LADO A LADO DOS CAMPOS SELETORES */
+.form-simulador {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.campo-simulador {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+}
+
+.campo-simulador label {
+    font-weight: bold;
+    color: #0f2c59;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* ESTILO DAS CAIXAS DE SELEÇÃO (SELECTS) */
+.campo-simulador select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    background-color: #f9fbfd;
+    transition: border-color 0.3s ease;
+}
+
+.campo-simulador select:focus {
+    border-color: #ff6600; /* Borda laranja ao clicar */
+}
+
+/* PAINEL QUE EXIBE O VALOR DA PARCELA E O BOTÃO */
+.painel-resultado {
+    background-color: #eadbc8; /* Cor bege areia do nosso tema */
+    padding: 20px 30px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.texto-resultado p {
+    font-size: 14px;
+    color: #0f2c59;
+    font-weight: 600;
+}
+
+.texto-resultado h3 {
+    font-size: 28px;
+    color: #1a4d2e; /* Verde floresta para indicar o valor financeiro */
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* DESTAQUE PARA A SEÇÃO DE MODALIDADES */
+.grid-servicos .caixa-servico {
+    background-color: #ffffff;
+    border-top: 4px solid #ff6600; /* Adiciona uma barra laranja charmosa no topo da caixa */
+    padding: 30px;                /* Aumenta o espaçamento interno para dar mais imponência */
+    box-shadow: 0 6px 15px rgba(15, 44, 89, 0.08); /* Sombra azulada */
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de destaque ao passar o mouse */
+.grid-servicos .caixa-servico:hover {
+    transform: translateY(-5px); /* Faz a caixa flutuar de leve */
+}
+
+/* AUMENTAR OS TÍTULOS DAS MODALIDADES */
+.grid-servicos .caixa-servico h3 {
+    font-size: 22px;   
+    color: #0f2c59;    /* Azul escuro marcante */
+    margin-bottom: 12px;
+}
+
+/* MELHORAR O TEXTO DESCRITIVO */
+.grid-servicos .caixa-servico p {
+    font-size: 15px;   
+    color: #444;       
+    line-height: 1.6;  /* Mais espaço entre as linhas */
+}
+
+/* BANNER DE APRESENTAÇÃO DA PÁGINA CLIENTE */
+.topo-cadastro {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background-color: #eadbc8; /* Bege/areia do tema */
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 120px;
+    margin-bottom: 35px;
+    flex-wrap: wrap; /* Caso a tela encolha */
+}
+
+.img-cadastro {
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.texto-cadastro {
+    flex: 1;
+    min-width: 280px;
+}
+
+.texto-cadastro h2 {
+    color: #0f2c59;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.texto-cadastro p {
+    color: #444;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+/* CAIXA BRANCA DO FORMULÁRIO */
+.form-cadastro {
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    max-width: 600px; /* Evita que o formulário estique demais horizontalmente */
+}
+
+/* GRUPO DE CAMPOS (TEXTO E SELEÇÃO) */
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.grupo-campo label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #0f2c59;
+    font-size: 14px;
+}
+
+.grupo-campo input, .grupo-campo select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    background-color: #f9fbfd;
+    transition: border-color 0.3s ease;
+}
+
+.grupo-campo input:focus, .grupo-campo select:focus {
+    border-color: #ff6600; /* Linha muda para laranja quando o usuário clica */
+}
+
+/* GRUPO DE BOLINHAS (RADIO) */
+.grupo-radio {
+    margin-bottom: 25px;
+}
+
+.grupo-radio p {
+    font-weight: bold;
+    color: #0f2c59;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.opcoes-radio {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.opcoes-radio input[type="radio"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.opcoes-radio label {
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 15px;
+    color: #333;
+}
+
+/* BOTÃO CADASTRAR */
+.btn-cadastrar {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%; /* Botão ocupa toda a largura do formulário */
+}
+
+.btn-cadastrar:hover {
+    background-color: #0f2c59; /* Muda para azul ao passar o mouse */
+    box-shadow: 0 4px 12px rgba(15, 44, 89, 0.2);
+}
